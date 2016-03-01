@@ -68,3 +68,47 @@ However, the Ruby-Doc says that a 'nil' will be returned if there is nothing cor
 
 By using the .length method
 hash.length will tell you how many elements are stored in the hash.
+
+---
+
+Follow-up:
+
+Compare the class documentation for each for more specific details.
+
+Hashes enumerate their values in the order that the corresponding keys were inserted, whereas Arrays are assigned 
+linearly (at the front, at the back, or at a specific location along that line). Hashes can use any object type for the 
+index while Arrays have to use integers. Hashes are far more useful because they can be used like a dictionary. Visually 
+you can think of it as a bucket of Lego compounds (each comprising of two individual yet connected Lego pieces) and 
+whose order is random. Arrays are ordered linearly.
+
+
+How would you perform an operation on every element inside a Hash?
+Give me an example of using the .each method
+
+h.each {|key, value| puts "#{key} is #{value}" }
+this will print out each key and its corresponding value
+
+or the Ruby Monk example...
+restaurant_menu = { "Ramen" => 3, "Dal Makhani" => 4, "Coffee" => 2 }
+restaurant_menu.each do | item, price |
+which will assign each key as the item, and each value as the price
+
+
+How would I change it so that when I do puts hash[:leia] it instead prints Has no time for your wookiees?
+hash[:leia] = "Has no time for your wookiees?"
+
+
+What happens if you try to retrieve an element from a Hash that does not exist in the Hash?
+  
+So for the above 2 issues, I ran this code to test out the value change and the nil
+
+hashy = {:leia => "Don't Die"}
+puts hashy
+hashy[:leia] = "Wookies"
+puts hashy
+puts hashy[:x]
+puts nil
+
+
+I saved it in Atom and ran it with Start Command Prompt with Ruby
+and the puts hashy[:x] and puts nil each produced a blank line
